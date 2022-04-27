@@ -1,0 +1,67 @@
+﻿<Window x:Class="VeloMax.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VeloMax"
+        xmlns:viewModel="clr-namespace:VeloMax.MVVM.ViewModel"
+        xmlns:view="clr-namespace:VeloMax.MVVM.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#1E1E2E"
+            CornerRadius="20">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="VeloMax"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="left"
+                       Foreground="White"
+                       FontSize="22"
+                       Margin="20"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Accueil"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+                <RadioButton Content="Vélo"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding BikeViewCommand}"/>
+                <RadioButton Content="Pièces"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+            </StackPanel>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding _CurrentView}"/>
+            
+            <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="239,162,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
+        </Grid>
+    </Border>
+</Window>
