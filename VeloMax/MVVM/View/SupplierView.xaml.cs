@@ -12,36 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 
-namespace VeloMax
+namespace VeloMax.MVVM.View
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour SupplierView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SupplierView : UserControl
     {
-        public MainWindow()
+        public SupplierView()
         {
             InitializeComponent();
-
-
-
-            
         }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
-        }
-
-        private void RadioButton_Checked()
-        {
-
-        }
-
     }
 }

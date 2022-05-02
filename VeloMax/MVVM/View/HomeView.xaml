@@ -5,53 +5,144 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VeloMax.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1000">
     <StackPanel>
-        <TextBlock Text="Accueil"
+        <TextBlock Text="Dashboard"
                    Foreground="White"
                    HorizontalAlignment="Left"
-                   FontSize="28"
-                   Margin="0,0,0,20"/>
-        <StackPanel Orientation="Horizontal">
-            <Border Width="400"
-                    Height="200"
-                    Background="#B5E8E0">
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,400,200"/>
-                </Border.Clip>
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Test"
-                                   Foreground="White"
-                                   FontSize="28"
-                                   Margin="10,0,0,0"/>
-                    </StackPanel>
-                    <Image Width="250"
-                           Height="250"
-                           Source="/Images/ManBike.png" Margin="-38,-7,188,-43"/>
-                </Grid>
-            </Border>
-            <Border Width="200"
-                    Height="200"
-                    Background="#F2CDCD"
-                    Margin="20,0,0,0"
-                    CornerRadius="10">
-            </Border>
-        </StackPanel>
-        
-        <StackPanel>
-            <TextBlock Text="Liste des vélos"
-                   Foreground="White"
-                   HorizontalAlignment="Left"
-                   FontSize="28"
-                   Margin="0,0,0,20"/>
+                   FontSize="24"
+                   Margin="25,0,0,20"/>
+
+        <RadioButton Margin="-320,-46,338,44"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Width="22"
+                     Style="{StaticResource HomeViewButtonTheme}"
+                     Command="{Binding HomeViewRefresh}">
+            
+        </RadioButton>
+        <Border Height="110">
             <StackPanel Orientation="Horizontal">
-                <Border Width="620"
-                        Height="130"
+                <Border Width="210"
+                        Height="100"
+                        Background="#B5E8E0"
+                        CornerRadius="10" 
+                        Margin="25,0,0,0">
+
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="Produits"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                            <TextBlock Text="{Binding Nb_partsdata}"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                            <TextBlock Text="{Binding Nb_bikedata}"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Width="210"
+                        Height="100"
+                        Background="#B5E8E0"
+                        CornerRadius="10" 
+                        Margin="30,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Ventes"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Width="210"
+                        Height="100"
+                        Background="#B5E8E0"
+                        CornerRadius="10" 
+                        Margin="30,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Clients"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding Nb_Customersdata}"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding Nb_Companysdata}"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Width="210"
+                        Height="100"
+                        Background="#B5E8E0"
+                        CornerRadius="10" 
+                        Margin="30,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Chiffre d'affaire"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </Border>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="600"
+                        Height="300"
                         Background="#F8BD96"
-                        CornerRadius="10"/>
+                        CornerRadius="10"
+                        Margin="25,25,0,0">
+                    <TextBlock Text="Ventes mensuelles"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10,0,0,20"/>
+                </Border>
+                <Border Width="300"
+                        Height="300"
+                        Background="#F8BD96"
+                        CornerRadius="10"
+                        Margin="30,25,0,0">
+                    <TextBlock Text="Statistiques"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10,0,0,20"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="600"
+                        Height="220"
+                        Background="#F8BD96"
+                        CornerRadius="10"
+                        Margin="25,25,0,0">
+                    <TextBlock Text="Commandes récentes"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10,0,0,20"/>
+                </Border>
+                <Border Width="300"
+                        Height="220"
+                        Background="#F8BD96"
+                        CornerRadius="10"
+                        Margin="30,25,0,0">
+                    <TextBlock Text="Meilleurs produits"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10,0,0,20"/>
+                </Border>
             </StackPanel>
         </StackPanel>
     </StackPanel>

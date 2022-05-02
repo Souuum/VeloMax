@@ -7,30 +7,29 @@ using System.Collections.ObjectModel;
 using Caliburn.Micro;
 namespace VeloMax.MVVM.ViewModel
 {
-    class BikeViewModel : ObservableObject, INotifyPropertyChanged
+    class PartViewModel : ObservableObject, INotifyPropertyChanged
     {
-        public List<List<string>> Bikes_data { get; set; }
-        public BindableCollection<Bike> Bikes { get; set; }
+        public List<List<string>> Parts_data { get; set; }
+        public BindableCollection<Part> Parts { get; set; }
         public MySqlConnection Connection { get; set; }
 
 
-        public BikeViewModel()
+        public PartViewModel()
         {
             InitData();
-
         }
 
         public void InitData()
         {
-            Bikes_data = SelectAllListRow("*", "Bikes");
+            Parts_data = SelectAllListRow("*", "Parts");
             Console.WriteLine("ici");
-            Console.WriteLine(Bikes_data.Count);
-            Bike bike = new Bike();
-            Bikes = new BindableCollection<Bike>();
-            foreach (var item in Bikes_data)
+            Console.WriteLine(Parts_data.Count);
+            Part part = new Part();
+            Parts = new BindableCollection<Part>();
+            foreach (var item in Parts_data)
             {
-                bike = new Bike(item);
-                Bikes.Add(bike);
+                part = new Part(item);
+                Parts.Add(part);
             }
 
 
@@ -124,5 +123,6 @@ namespace VeloMax.MVVM.ViewModel
             }
             return list;
         }
+
     }
 }

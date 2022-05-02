@@ -20,12 +20,13 @@
                 </Setter.Value>
             </Setter>
             <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#b7bbbd"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style.Setters>
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#161320"/>
+                <Setter Property="Foreground" Value="#161320"/>
             </Trigger>
         </Style.Triggers>
     </Style>

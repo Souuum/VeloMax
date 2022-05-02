@@ -1,10 +1,9 @@
-﻿<UserControl x:Class="VeloMax.MVVM.View.BikeView"
+﻿<UserControl x:Class="VeloMax.MVVM.View.SupplierView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:VeloMax.MVVM.View" 
-             xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:BikeViewModel}"
+             xmlns:local="clr-namespace:VeloMax.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
     <StackPanel>
@@ -26,23 +25,14 @@
                     CornerRadius="10">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Bikes}">
+                    <ItemsControl ItemsSource="{Binding Customers}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Border Width="580"
                                     Height="50"
+                                    Background="white"
                                     CornerRadius="10"
                                     Margin="0,10,0,0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="white"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Stock}" Value="0">
-                                                    <Setter Property="Background" Value="#F5E0DC"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
                                     <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Stretch"
                                             VerticalAlignment="Stretch">
@@ -103,4 +93,3 @@
 
     </StackPanel>
 </UserControl>
-

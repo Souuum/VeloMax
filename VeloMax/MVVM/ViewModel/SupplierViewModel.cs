@@ -5,32 +5,32 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Caliburn.Micro;
+
 namespace VeloMax.MVVM.ViewModel
 {
-    class BikeViewModel : ObservableObject, INotifyPropertyChanged
+    class SupplierViewModel : ObservableObject, INotifyPropertyChanged
     {
-        public List<List<string>> Bikes_data { get; set; }
-        public BindableCollection<Bike> Bikes { get; set; }
+        public List<List<string>> Suppliers_data { get; set; }
+        public BindableCollection<Supplier> Suppliers { get; set; }
         public MySqlConnection Connection { get; set; }
 
 
-        public BikeViewModel()
+        public SupplierViewModel()
         {
             InitData();
-
         }
 
         public void InitData()
         {
-            Bikes_data = SelectAllListRow("*", "Bikes");
+            Suppliers_data = SelectAllListRow("*", "Suppliers");
             Console.WriteLine("ici");
-            Console.WriteLine(Bikes_data.Count);
-            Bike bike = new Bike();
-            Bikes = new BindableCollection<Bike>();
-            foreach (var item in Bikes_data)
+            Console.WriteLine(Suppliers_data.Count);
+            Supplier supplier = new Supplier();
+            Suppliers = new BindableCollection<Supplier>();
+            foreach (var item in Suppliers_data)
             {
-                bike = new Bike(item);
-                Bikes.Add(bike);
+                supplier = new Supplier(item);
+                Suppliers.Add(supplier);
             }
 
 
@@ -124,5 +124,6 @@ namespace VeloMax.MVVM.ViewModel
             }
             return list;
         }
+
     }
 }

@@ -1,0 +1,2 @@
+..\..\..\..\..\..\..\AppData\Local\Apps\2.0\3Z0VQYQP.BCQ\98TG90R7.41B\svgt..tion_b37188d7c132e088_0001.0000_7bdbc24efeaf4f36\SvgToXaml.exe BuildDict /inputdir "." /outputdir "." /outputname Images /useComponentResKeys=true /compResKeyNSName=VeloMax /compResKeyNS=VeloMax
+pause

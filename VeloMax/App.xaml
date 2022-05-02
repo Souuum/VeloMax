@@ -9,6 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/HomeViewButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ScrollBar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -16,6 +18,18 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:BikeViewModel}">
                 <view:BikeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PartViewModel}">
+                <view:PartView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
+                <view:CustomerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SupplierViewModel}">
+                <view:SupplierView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:OrderViewModel}">
+                <view:OrderView/>
             </DataTemplate>
 
         </ResourceDictionary>
