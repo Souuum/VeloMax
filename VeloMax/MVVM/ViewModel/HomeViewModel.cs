@@ -12,6 +12,7 @@ namespace VeloMax.MVVM.ViewModel
         private string nb_bikesdata;
         private string nb_customersdata;
         private string nb_companysdata;
+        public DataBase Db { get; set; }
 
         public string Nb_partsdata
         {
@@ -84,14 +85,14 @@ namespace VeloMax.MVVM.ViewModel
             {
                 Console.WriteLine("Connexion Failed" + e.ToString());
             }
-            MySqlCommand nb_parts = new MySqlCommand("SELECT SUM(quantity) FROM Parts;", connection);
+            MySqlCommand nb_parts = new MySqlCommand("SELECT COUNT(*) FROM Parts;", connection);
 
             MySqlDataReader reader_parts = nb_parts.ExecuteReader();
             reader_parts.Read();
             Nb_partsdata = reader_parts.GetString(0) + " pièces";
             reader_parts.Close();
 
-            MySqlCommand nb_bikes = new MySqlCommand("SELECT SUM(stock) FROM Bikes;", connection);
+            MySqlCommand nb_bikes = new MySqlCommand("SELECT COUNT(*) FROM Bikes;", connection);
 
             MySqlDataReader reader_bikes = nb_bikes.ExecuteReader();
             reader_bikes.Read();

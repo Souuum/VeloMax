@@ -20,7 +20,7 @@ namespace VeloMax.MVVM.ViewModel
         public SupplierViewModel SupplierVM { get; set; }
         public OrderViewModel OrderVM { get; set; }
 
-
+        
         private object _currentView;
 
         public object _CurrentView
@@ -32,6 +32,9 @@ namespace VeloMax.MVVM.ViewModel
                 OnProportyChanged();
             }
         }
+
+     
+
 
         public MainViewModel()
         {
@@ -73,6 +76,9 @@ namespace VeloMax.MVVM.ViewModel
             {
                 _CurrentView = OrderVM;
             });
+
         }
     }
+
+   
 }

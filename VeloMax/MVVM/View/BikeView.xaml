@@ -13,6 +13,16 @@
                    HorizontalAlignment="Left"
                    FontSize="24"
                    Margin="25,0,0,20"/>
+        <RadioButton Margin="-320,-46,338,44"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Width="22"
+                     Style="{StaticResource HomeViewButtonTheme}"
+                     Command="{Binding BikeViewRefresh}">
+
+        </RadioButton>
+
+ 
         <Border Height="110">
             <TextBlock
                 Text="listing attributes"
@@ -20,84 +30,111 @@
                 FontSize="24"></TextBlock>
         </Border>
         <StackPanel Orientation="Horizontal">
-            <Border Width="600"
+            <Border Width="521"
                     Height="600"
                     Margin="30,0,0,0"
                     CornerRadius="10">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                              VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Bikes}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Width="580"
-                                    Height="50"
-                                    CornerRadius="10"
-                                    Margin="0,10,0,0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="white"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Stock}" Value="0">
-                                                    <Setter Property="Background" Value="#F5E0DC"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
-                                    <StackPanel Orientation="Horizontal"
-                                            HorizontalAlignment="Stretch"
-                                            VerticalAlignment="Stretch">
-                                        <TextBlock Text="{Binding Name}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="10"/>
-                                        <TextBlock Text="{Binding Size}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="10"/>
-                                        <TextBlock Text="{Binding Price}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="10"/>
-                                        <TextBlock Text="{Binding Type}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="10"/>
-                                        <TextBlock Text="{Binding Date_start}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="0,10,0,0"/>
-                                        <TextBlock Text="{Binding Date_end}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="0,10,0,0"/>
-                                        <TextBlock Text="{Binding Stock}"
-                                                   Foreground="#161320"
-                                                   Padding="5"
-                                                   FontSize="14"
-                                                   Margin="10"/>
-                                    </StackPanel>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
 
-                                </Border>
+                    <DataGrid x:Name="BikesGrid"
+                              IsReadOnly= "True"
+                              ItemsSource="{Binding Bikes}"
+                              Background="Transparent"
+                              BorderThickness="0">
 
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    </DataGrid>
                 </ScrollViewer>
             </Border>
             <Border Width="280"
-                    Height="590"
-                    Margin="30,0,0,0"
+                    Height="510"
+                    Margin="30,-90,0,0"
                     CornerRadius="10"
                     Background="white">
-
+                <StackPanel>
+                    <Border Width="250"
+                            Height="30"
+                            CornerRadius="10"
+                            Margin="1,20,2,1">
+                        <TextBox
+                            Text="Name"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Size"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Price"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Type"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Date Start"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Date End"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="Stock"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Ajouter"
+                                >
+                            
+                        </Button>
+                    </Border>
+                </StackPanel>
+                
             </Border>
-
         </StackPanel>
 
 

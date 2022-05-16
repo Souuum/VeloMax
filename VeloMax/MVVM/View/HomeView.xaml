@@ -19,7 +19,7 @@
                     Width="22"
                      Style="{StaticResource HomeViewButtonTheme}"
                      Command="{Binding HomeViewRefresh}">
-            
+
         </RadioButton>
         <Border Height="110">
             <StackPanel Orientation="Horizontal">
