@@ -10,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 
 namespace VeloMax
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour BikePartWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BikePartWindow : Window
     {
-        public MainWindow()
+        public BikePartWindow()
         {
             InitializeComponent();
-
-
-
-            
         }
-
-
 
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -44,7 +36,5 @@ namespace VeloMax
                 DragMove();
             }
         }
-
-
     }
 }

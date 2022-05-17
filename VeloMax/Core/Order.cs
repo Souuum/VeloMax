@@ -16,15 +16,15 @@ namespace VeloMax.Core
         public string Postal_code { get; set; }
 
         public string State { get; set; }
-
-        public List<Object> Product { get; set; }
+        
+        public string Country { get; set; }
 
         public Order()
         {
 
         }
 
-        public Order(List<string> list, List<Object> product)
+        public Order(List<string> list)
         { 
             Id = Convert.ToInt32(list[0]);
             Customer_id = Convert.ToInt32(list[1]);
@@ -33,7 +33,12 @@ namespace VeloMax.Core
             City = list[4];
             Postal_code = list[5];
             State = list[6];
-            Product = product;
+            Country = list[7];
+        }
+
+        public override string ToString()
+        {
+            return Id.ToString() + " " + Id.ToString() + " " + Customer_id.ToString() + " " + Street_number.ToString() + " " + Street.ToString() + " " + City.ToString() + " " + Postal_code.ToString() + " " + State.ToString() + " " + Country.ToString();
         }
 
     }

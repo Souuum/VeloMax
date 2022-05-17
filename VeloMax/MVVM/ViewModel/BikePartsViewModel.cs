@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace VeloMax.MVVM.ViewModel
 {
-    class BikeViewModel : ObservableObject, INotifyPropertyChanged
+    class BikePartsViewModel : ObservableObject, INotifyPropertyChanged
     {
         private List<List<string>> bikes_data { get; set; }
 
@@ -20,15 +20,21 @@ namespace VeloMax.MVVM.ViewModel
         private string tType;
         private string tDateS;
         private string tDateE;
-        private string tStock; 
+        private string tStock;
 
 
-
+        private string rBikeRow;
         
 
-        public string BikeRow { get; set; }
+        public string RBikeRow
+        {
+            get =>rBikeRow; set
+            {
+                rBikeRow = value;
+                OnPropertyChanged(nameof(RBikeRow));
+            }
+        }
 
-        
         public BindableCollection<Bike> Bikes { get; set; }
         public DataBase Db { get; set; }
 
@@ -124,23 +130,16 @@ namespace VeloMax.MVVM.ViewModel
         public RelayCommand BikePartsOpen { get; set; }
 
 
+        public BPViewModel PartVM { get; set; }
+        
 
-        public BikeViewModel()
+        public BikePartsViewModel()
         {
+            PartVM = new BPViewModel();
+            PartVM.BikeRow = RBikeRow;
             
             Db = new DataBase();
             InitData();
-            BikePartsOpen = new RelayCommand(o =>
-            {
-                Console.WriteLine("Opening 1");
-                BikePartWindow BP = new BikePartWindow();
-                BP.DataContext = new BikePartsViewModel();
-                ((BikePartsViewModel)BP.DataContext).RBikeRow = BikeRow;
-                Console.WriteLine(((BikePartsViewModel)BP.DataContext).RBikeRow);
-                BP.Show();
-                Console.WriteLine(BP.DataContext.ToString());
-                Console.WriteLine(tStock);
-            });
 
 
             BikeViewRefresh = new RelayCommand(o =>
@@ -154,7 +153,7 @@ namespace VeloMax.MVVM.ViewModel
                     Console.WriteLine("PROUUUT");
                 }
                 Console.WriteLine(TName);
-                Console.WriteLine(BikeRow);
+                Console.WriteLine(RBikeRow);
                 InitData();
             });
 
@@ -191,20 +190,20 @@ namespace VeloMax.MVVM.ViewModel
             BikeDelete = new RelayCommand(o =>
             {
                 
-                string id = BikeRow.Split()[0];
+                string id = RBikeRow.Split()[0];
                 Db.DeleteDependencies("Bike_Parts", "bike_id", id, false);
                 Db.DeleteDependencies("Bike_Ordered", "bike_id", id, false);
                 Db.DeleteRow("Bikes","bike_id", id, false);
                 
-                Console.WriteLine(BikeRow);
+                Console.WriteLine(RBikeRow);
 
             });
 
             BikeUpdate = new RelayCommand(o =>
             {
                 List<string> cols = new List<string>();
-                string id = BikeRow.Split()[0];
-                Console.WriteLine(BikeRow);
+                string id = RBikeRow.Split()[0];
+                Console.WriteLine(RBikeRow);
                 List<MySqlParameter> BikeUpdateData = new List<MySqlParameter>();
                 if (tName != null) 
                 {
@@ -266,16 +265,7 @@ namespace VeloMax.MVVM.ViewModel
 
         public void InitData()
         {
-            bikes_data = Db.SelectAllListRow("*", "Bikes");
-            Console.WriteLine("ici");
-            Console.WriteLine(bikes_data.Count);
-            Bike bike = new Bike();
-            Bikes = new BindableCollection<Bike>();
-            foreach (var item in bikes_data)
-            {
-                bike = new Bike(item);
-                Bikes.Add(bike);
-            }
+            Console.WriteLine(RBikeRow + "prout");
 
 
         }

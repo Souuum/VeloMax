@@ -217,5 +217,40 @@ namespace VeloMax.Core
                 this.CloseConnection();
             }
         }
+        public void DeleteDependencies(string table,string id_name, string id, bool isString)
+        {
+            if (this.OpenConnection())
+            {
+                MySqlCommand cmd = Connection.CreateCommand();
+                if (isString == false)
+                {
+                    int idint = Convert.ToInt32(id);
+                    string query = "DELETE FROM " + table + " WHERE " + id_name + " = " + idint;
+                    cmd.CommandText = query;
+                }
+                else
+                {
+                    string query = "DELETE FROM " + table + " WHERE " + id_name + " = " + id;
+                    cmd.CommandText = query;
+                }
+
+                try
+                {
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Delete Relation " + table + " Success");
+                }
+                catch (MySqlException e)
+                {
+                    Console.WriteLine("Delete Relation " + table + " Failed" + e.ToString());
+                }
+                this.CloseConnection();
+            }
+        }
+
+        public void BPInit()
+        {
+
+        }
     }
 }

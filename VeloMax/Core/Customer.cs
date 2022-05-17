@@ -58,7 +58,12 @@ namespace VeloMax.Core
             Mail = list[12];
             Fidelity_program = Convert.ToInt32(list[13]);
             Is_member = list[13].ToString();
-            Customer_fullname = Customer_name + " " + Customer_firstname;
+        }
+
+        public override string ToString()
+        {
+            return Id.ToString() + " " + Id.ToString() + " " + Type.ToString() + " " + Company_name.ToString() + " " + Customer_name.ToString() + " " + Customer_firstname.ToString() + " " + Street_number.ToString() + " " + Street.ToString() + " " + City.ToString() + " " + Postcode.ToString() + " " + State.ToString() + " " + Country.ToString()+ " " + Phone.ToString() 
+                + " " + Mail.ToString() + " " + Fidelity_program.ToString() + " " + Is_member.ToString();
         }
     }
 }

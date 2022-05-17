@@ -56,6 +56,10 @@
                                        Foreground="White"
                                        FontSize="20"
                                        Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding Nb_orderdata}"
+                                       Foreground="White"
+                                       FontSize="20"
+                                       Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Width="210"

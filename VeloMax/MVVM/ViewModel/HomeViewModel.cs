@@ -12,6 +12,7 @@ namespace VeloMax.MVVM.ViewModel
         private string nb_bikesdata;
         private string nb_customersdata;
         private string nb_companysdata;
+        private string nb_orderdata;
         public DataBase Db { get; set; }
 
         public string Nb_partsdata
@@ -20,6 +21,14 @@ namespace VeloMax.MVVM.ViewModel
             {
                 nb_partsdata = value;
                 OnPropertyChanged(nameof(Nb_partsdata));
+            }
+        }
+        public string Nb_orderdata
+        {
+            get => nb_partsdata; set
+            {
+                nb_partsdata = value;
+                OnPropertyChanged(nameof(Nb_orderdata));
             }
         }
         public string Nb_bikedata 
@@ -115,6 +124,14 @@ namespace VeloMax.MVVM.ViewModel
             Nb_Companysdata = reader_companys.GetString(0) + " entreprises";
             Console.WriteLine(Nb_Companysdata);
             reader_companys.Close();
+
+            MySqlCommand nb_orders = new MySqlCommand("SELECT COUNT(*) FROM Orders;", connection);
+
+            MySqlDataReader reader_orders = nb_orders.ExecuteReader();
+            reader_orders.Read();
+            Nb_orderdata = reader_orders.GetString(0) + " Commandes";
+            Console.WriteLine(Nb_orderdata);
+            reader_orders.Close();
 
             connection.Close();
         }

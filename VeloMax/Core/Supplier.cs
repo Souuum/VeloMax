@@ -21,6 +21,8 @@ namespace VeloMax.Core
 
         public string State { get; set; }
 
+        public string Country { get; set; }
+
         public string Label { get; set; }
 
         public Supplier()
@@ -38,7 +40,13 @@ namespace VeloMax.Core
             City = list[5];
             Postal_code = list[6];
             State = list[7];
-            Label = list[8];
+            Country = list[8];
+            Label = list[9];
+        }
+
+        public override string ToString()
+        {
+            return Siret.ToString() + " " + Name.ToString() + " " + Contact.ToString() + " " + Street_number.ToString() + " " + Street.ToString() + " " + City.ToString() + " " + Postal_code.ToString() + " " + State.ToString() + " " + Country.ToString()+ " " + Label.ToString() ;
         }
     }
 }

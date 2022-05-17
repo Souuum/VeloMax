@@ -13,5 +13,6 @@ namespace VeloMax
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

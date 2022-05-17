@@ -8,7 +8,7 @@ using Caliburn.Micro;
 using System.Runtime.CompilerServices;
 namespace VeloMax.MVVM.ViewModel
 {
-    class PartViewModel : ObservableObject, INotifyPropertyChanged
+    class BPViewModel : ObservableObject, INotifyPropertyChanged
     {
         private string tLabel;
         private string tPrice;
@@ -18,6 +18,7 @@ namespace VeloMax.MVVM.ViewModel
         private string tStock;
         private string tType;
         public string PartRow { get; set; }
+        public string BikeRow { get; set; }
         private List<List<string>> parts_data;
         public BindableCollection<Part> Parts { get; set; }
         public DataBase Db { get; set; }
@@ -100,7 +101,7 @@ namespace VeloMax.MVVM.ViewModel
         public RelayCommand PartDelete { get; set; }
 
         public RelayCommand PartUpdate { get; set; }
-        public PartViewModel()
+        public BPViewModel()
         {
             Db = new DataBase();
             InitData();

@@ -3,10 +3,113 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:VeloMax.MVVM.View"
+             xmlns:local="clr-namespace:VeloMax.MVVM.View" 
+             xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:OrderViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <StackPanel>
+        <TextBlock Text="Commandes"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="24"
+                   Margin="25,0,0,20"/>
+
+        <RadioButton Margin="-320,-46,338,44"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Width="22"
+                     Style="{StaticResource HomeViewButtonTheme}"
+                     Command="{Binding OrderViewRefresh}">
+
+        </RadioButton>
+        <Button Style="{StaticResource GlobalButtonTheme}"
+                Command="{Binding OrderDelete}"
+                                Content="Supprimer la ligne"
+                                Width="154" Height="30"
+                Margin="460,0,0,-150"
+                                >
+
+        </Button>
+
+        <Border Height="110"
+                Width="600"
+                HorizontalAlignment="Left">
+            <TextBlock
+                Text="Liste des commandes"
+                Foreground="White"
+                FontSize="24"></TextBlock>
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <Border Width="521"
+                    Height="600"
+                    Margin="30,0,0,0"
+                    CornerRadius="10">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+
+                    <DataGrid x:Name="BikesGrid"
+                              IsReadOnly= "True"
+                              ItemsSource="{Binding Orders}"
+                              Background="Transparent"
+                              BorderThickness="0"
+                              SelectedItem="{Binding OrderRow}">
+                    </DataGrid>
+                </ScrollViewer>
+            </Border>
+            <Border Width="280"
+                    Height="510"
+                    Margin="30,-90,0,0"
+                    CornerRadius="10"
+                    Background="white">
+                <StackPanel>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TCustomerid}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TFullAddr}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Ajouter"
+                                Command="{Binding OrderAdd}"
+                                >
+
+                        </Button>
+
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Modifier la sélection"
+                                Command="{Binding OrderUpdate}"
+                                >
+
+                        </Button>
+
+                    </Border>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+
+
+    </StackPanel>
 </UserControl>

@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VeloMax.MVVM.View" 
+             xmlns:viewModel="clr-namespace:VeloMax.MVVM.ViewModel"
+             xmlns:view="clr-namespace:VeloMax.MVVM.View"
              xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:BikeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
@@ -23,6 +25,14 @@
                      Command="{Binding BikeViewRefresh}">
 
         </RadioButton>
+        <Button Style="{StaticResource GlobalButtonTheme}"
+                Name="Open"
+                Content="Voir les pièces"
+                Width="154" Height="30"
+                Margin="460,0,0,-50"
+                Command="{Binding BikePartsOpen}">
+
+        </Button>
         <Button Style="{StaticResource GlobalButtonTheme}"
                 Command="{Binding BikeDelete}"
                                 Content="Supprimer la ligne"
@@ -52,7 +62,7 @@
                               ItemsSource="{Binding Bikes}"
                               Background="Transparent"
                               BorderThickness="0"
-                              SelectedItem="{Binding row}">
+                              SelectedItem="{Binding BikeRow}">
                     </DataGrid>
                 </ScrollViewer>
             </Border>

@@ -4,14 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VeloMax.MVVM.View"
+             xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CustomerViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
+
     <StackPanel>
-        <TextBlock Text="Header"
+        <TextBlock Text="Clients"
                    Foreground="White"
                    HorizontalAlignment="Left"
                    FontSize="24"
                    Margin="25,0,0,20"/>
+
         <RadioButton Margin="-320,-46,338,44"
                     Background="Transparent"
                     BorderThickness="0"
@@ -20,35 +23,125 @@
                      Command="{Binding CustomerViewRefresh}">
 
         </RadioButton>
-        <Border Height="110">
+        <Button Style="{StaticResource GlobalButtonTheme}"
+                Command="{Binding CustomerDelete}"
+                                Content="Supprimer la ligne"
+                                Width="154" Height="30"
+                Margin="460,0,0,-150"
+                                >
 
+        </Button>
+
+        <Border Height="110"
+                Width="600"
+                HorizontalAlignment="Left">
             <TextBlock
-                Text="listing attributes"
+                Text="Liste des clients"
                 Foreground="White"
                 FontSize="24"></TextBlock>
         </Border>
         <StackPanel Orientation="Horizontal">
-            <Border Width="600"
+            <Border Width="521"
                     Height="600"
                     Margin="30,0,0,0"
-                    CornerRadius="10">  
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                              VerticalScrollBarVisibility="Auto">
+                    CornerRadius="10">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+
                     <DataGrid x:Name="BikesGrid"
                               IsReadOnly= "True"
-                              ItemsSource="{Binding Customers}" Background="#FFD6D6D6" BorderBrush="#FFD7EBFF">
-
+                              ItemsSource="{Binding Customers}"
+                              Background="Transparent"
+                              BorderThickness="0"
+                              SelectedItem="{Binding CustomerRow}">
                     </DataGrid>
                 </ScrollViewer>
             </Border>
             <Border Width="280"
-                    Height="590"
-                    Margin="30,0,0,0"
+                    Height="510"
+                    Margin="30,-90,0,0"
                     CornerRadius="10"
                     Background="white">
+                <StackPanel>
+                    <Border Width="250"
+                            Height="30"
+                            CornerRadius="10"
+                            Margin="1,20,2,1">
+                        <TextBox
+                            x:Name="TBName"
+                            Text="{Binding TFullName}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TCompanyName}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TFullAddr}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TPhone}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <TextBox
+                            Text="{Binding TMail}"
+                            BorderThickness="0"
+                            Background="#B5E8E0"
+                            Padding="1,2,2,1"/>
+                    </Border>
+                    
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Ajouter"
+                                Command="{Binding CustomerAdd}"
+                                >
+
+                        </Button>
+
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Modifier la sélection"
+                                Command="{Binding CustomerUpdate}"
+                                >
+
+                        </Button>
+
+                    </Border>
+                </StackPanel>
 
             </Border>
-
         </StackPanel>
 
 
