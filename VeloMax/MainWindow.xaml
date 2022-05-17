@@ -87,7 +87,8 @@
                             Content="{Binding _CurrentView}"/>
             <Button     
             Command="ApplicationCommands.Close" Margin="956,0,0,760" 
-            Background="#FFE26464" 
+            Background="#FFE26464"
+            BorderThickness="0"
             RenderTransformOrigin="1,0"
             Width="20"
             Height="20" Grid.Column="1">

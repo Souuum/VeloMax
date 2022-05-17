@@ -33,6 +33,7 @@
             <Button     
             Command="ApplicationCommands.Close" 
             Background="#FFE26464" 
+            BorderThickness="0"
             RenderTransformOrigin="1,0"
             Width="20"
             Height="20"
