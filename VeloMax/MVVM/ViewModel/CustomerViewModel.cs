@@ -12,6 +12,66 @@ namespace VeloMax.MVVM.ViewModel
     class CustomerViewModel : ObservableObject, INotifyPropertyChanged
     {
         private List<List<string>> customers_data { get; set; }
+        private string tFullName;
+        private string tCompanyName;
+        private string tFullAddr;
+        private string tPhone;
+        private string tMail;
+        private string tDateS;
+        private string tDateE;
+        private string tStock;
+        private string tFP;
+
+        public string TFullName
+        {
+            get => tFullName; set
+            {
+                tFullName = value;
+                OnPropertyChanged(nameof(TFullName));
+            }
+        }
+        public string TCompanyName
+        {
+            get => tCompanyName; set
+            {
+                tFullName = value;
+                OnPropertyChanged(nameof(TCompanyName));
+            }
+        }
+        public string TFullAddr
+        {
+            get => tFullAddr; set
+            {
+                tFullAddr = value;
+                OnPropertyChanged(nameof(TFullAddr));
+            }
+        }
+        public string TPhone
+        {
+            get => tPhone; set
+            {
+                tPhone = value;
+                OnPropertyChanged(nameof(TPhone));
+            }
+        }
+
+        public string TMail
+        {
+            get => tMail; set
+            {
+                tMail = value;
+                OnPropertyChanged(nameof(TMail));
+            }
+        }
+        public string TFP
+        {
+            get => tFP; set
+            {
+                tFP = value;
+                OnPropertyChanged(nameof(TFP));
+            }
+        }
+
         public BindableCollection<Customer> Customers { get; set; }
         public DataBase Db { get; set; }
 

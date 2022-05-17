@@ -30,7 +30,7 @@ namespace VeloMax.Core
             Id = Convert.ToInt32(list[0]);
             Name = list[1];
             Size = list[2];
-            Price = Convert.ToInt32(list[3]);
+            Price = float.Parse(list[3]);
             Type = list[4];
             Date_start = list[5].Split()[0];
             Date_end = list[6].Split()[0];

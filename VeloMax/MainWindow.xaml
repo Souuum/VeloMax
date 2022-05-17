@@ -20,7 +20,7 @@
                         Executed="CloseCommandHandler"/>
     </Window.CommandBindings>
 
-<Border Background="#EAF6FA"
+    <Border Background="#F5E0DC"
             CornerRadius="20"
             MouseDown="Border_MouseDown">
 

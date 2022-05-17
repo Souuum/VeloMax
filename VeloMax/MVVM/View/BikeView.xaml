@@ -7,12 +7,14 @@
              xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:BikeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
+
     <StackPanel>
-        <TextBlock Text="Header"
+        <TextBlock Text="Vélos"
                    Foreground="White"
                    HorizontalAlignment="Left"
                    FontSize="24"
                    Margin="25,0,0,20"/>
+
         <RadioButton Margin="-320,-46,338,44"
                     Background="Transparent"
                     BorderThickness="0"
@@ -21,11 +23,20 @@
                      Command="{Binding BikeViewRefresh}">
 
         </RadioButton>
+        <Button Style="{StaticResource GlobalButtonTheme}"
+                Command="{Binding BikeDelete}"
+                                Content="Supprimer la ligne"
+                                Width="154" Height="30"
+                Margin="460,0,0,-150"
+                                >
 
- 
-        <Border Height="110">
+        </Button>
+
+        <Border Height="110"
+                Width="600"
+                HorizontalAlignment="Left">
             <TextBlock
-                Text="listing attributes"
+                Text="Liste des vélos"
                 Foreground="White"
                 FontSize="24"></TextBlock>
         </Border>
@@ -40,8 +51,8 @@
                               IsReadOnly= "True"
                               ItemsSource="{Binding Bikes}"
                               Background="Transparent"
-                              BorderThickness="0">
-
+                              BorderThickness="0"
+                              SelectedItem="{Binding row}">
                     </DataGrid>
                 </ScrollViewer>
             </Border>
@@ -56,7 +67,8 @@
                             CornerRadius="10"
                             Margin="1,20,2,1">
                         <TextBox
-                            Text="Name"
+                            x:Name="TBName"
+                            Text="{Binding TName}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             
@@ -67,7 +79,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Size"
+                            Text="{Binding TSize}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -77,7 +89,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Price"
+                            Text="{Binding TPrice}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -87,7 +99,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Type"
+                            Text="{Binding TType}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -97,7 +109,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Date Start"
+                            Text="{Binding TDateS}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -107,7 +119,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Date End"
+                            Text="{Binding TDateE}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -117,7 +129,7 @@
                         CornerRadius="10"
                         Margin="1,20,2,1">
                         <TextBox
-                            Text="Stock"
+                            Text="{Binding TStock}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
@@ -128,12 +140,26 @@
                         Margin="1,20,2,1">
                         <Button Style="{StaticResource GlobalButtonTheme}"
                                 Content="Ajouter"
+                                Command="{Binding BikeAdd}"
                                 >
-                            
+
                         </Button>
+                        
+                    </Border>
+                    <Border Width="250"
+                        Height="30"
+                        CornerRadius="10"
+                        Margin="1,20,2,1">
+                        <Button Style="{StaticResource GlobalButtonTheme}"
+                                Content="Modifier la sélection"
+                                Command="{Binding BikeUpdate}"
+                                >
+
+                        </Button>
+
                     </Border>
                 </StackPanel>
-                
+
             </Border>
         </StackPanel>
 

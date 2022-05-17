@@ -24,7 +24,7 @@ namespace VeloMax.Core
         {
             Id = Convert.ToInt32(list[0]);
             Label = list[1];
-            Price = Convert.ToInt32(list[2]);
+            Price = float.Parse(list[2]);
             Date_start = list[3].Split()[0];
             Date_end = list[4].Split()[0];
             Delay = Convert.ToInt32(list[5]);
