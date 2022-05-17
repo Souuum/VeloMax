@@ -147,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\BPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MVVM\View\PartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +205,9 @@
     </Compile>
     <Compile Include="MVVM\View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\BPView.xaml.cs">
+      <DependentUpon>BPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\PartView.xaml.cs">
       <DependentUpon>PartView.xaml</DependentUpon>

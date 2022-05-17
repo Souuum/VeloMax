@@ -248,9 +248,49 @@ namespace VeloMax.Core
             }
         }
 
-        public void BPInit()
+        public List<List<string>> BPInit(string table,List<string>cols,string condition, string id_name, string id, bool isString)
         {
+            string columns = "";
+            List<List<string>> list = new List<List<string>>();
+            for(int i = 0; i < cols.Count; i++)
+            {
+                columns += i!=cols.Count-1 ? cols[i] + ", " : cols[i];
+            }
+            if (this.OpenConnection())
+            {
+                    string query = "SELECT " + columns + " FROM " + table + " WHERE " + condition + " AND " + id_name + " = ";
+                    if (isString == false)
+                    {
+                        int idint = Convert.ToInt32(id);
+                        query += idint;
+                    }
+                    else
+                    {
+                        query += id;
 
+                    }
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, Connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                int j = 0;
+                while (dataReader.Read())
+                {
+                    List<string> row = new List<string>();
+                    for (int i = 0; i < dataReader.FieldCount; i++)
+                    {
+                        {
+                            row.Add(dataReader.GetString(i));
+                        }
+                    }
+                    list.Add(row);
+                    j++;
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return list;
+            }
+            return list;
         }
     }
 }

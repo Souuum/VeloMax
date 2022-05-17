@@ -36,5 +36,10 @@ namespace VeloMax
                 DragMove();
             }
         }
+
+        private void BikesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

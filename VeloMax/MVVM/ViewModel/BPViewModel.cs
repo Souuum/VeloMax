@@ -220,16 +220,7 @@ namespace VeloMax.MVVM.ViewModel
 
         public void InitData()
         {
-            Parts_data = Db.SelectAllListRow("*", "Parts");
-            Console.WriteLine("ici");
-            Console.WriteLine(Parts_data.Count);
-            Part part = new Part();
-            Parts = new BindableCollection<Part>();
-            foreach (var item in Parts_data)
-            {
-                part = new Part(item);
-                Parts.Add(part);
-            }
+
 
         }
 

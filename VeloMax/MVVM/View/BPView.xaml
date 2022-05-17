@@ -1,197 +1,167 @@
-﻿<Window x:Class="VeloMax.BikePartWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VeloMax"
-        xmlns:viewModel="clr-namespace:VeloMax.MVVM.ViewModel"
-        xmlns:view="clr-namespace:VeloMax.MVVM.View"
-        mc:Ignorable="d"
-        Title="BikePartWindow" Height="800" Width="1200"
-        WindowStyle="None"
-        Background="Transparent"
-        AllowsTransparency="True">
-
-    <Window.DataContext>
-        <viewModel:BikePartsViewModel/>
-    </Window.DataContext>
-    <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close"
-                        Executed="CloseCommandHandler"/>
-    </Window.CommandBindings>
-
-    <Border Background="#C9CBFF"
-            CornerRadius="20"
-            MouseDown="Border_MouseDown">
-
-        <StackPanel>
-            <TextBlock Text="Pièces"
+﻿<UserControl x:Class="VeloMax.MVVM.View.BPView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeloMax.MVVM.View" 
+             xmlns:viewmodel="clr-namespace:VeloMax.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:BikePartViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <StackPanel>
+        <TextBlock Text="Pièces"
                    Foreground="White"
                    HorizontalAlignment="Left"
                    FontSize="24"
                    Margin="25,0,0,20"/>
-            <Button     
-            Command="ApplicationCommands.Close" 
-            Background="#FFE26464" 
-            RenderTransformOrigin="1,0"
-            Width="20"
-            Height="20"
-                Margin="1150,-60,0,0">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="50"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
 
-            <RadioButton Margin="-320,-46,338,44"
+        <RadioButton Margin="-320,-46,338,44"
                     Background="Transparent"
                     BorderThickness="0"
                     Width="22"
                      Style="{StaticResource HomeViewButtonTheme}"
                      Command="{Binding PartViewRefresh}">
 
-            </RadioButton>
-            <Button Style="{StaticResource GlobalButtonTheme}"
+        </RadioButton>
+        <Button Style="{StaticResource GlobalButtonTheme}"
                 Command="{Binding PartDelete}"
                                 Content="Supprimer la ligne"
                                 Width="154" Height="30"
                 Margin="460,0,0,-150"
                                 >
 
-            </Button>
+        </Button>
 
-            <Border Height="110"
+        <Border Height="110"
                 Width="600"
                 HorizontalAlignment="Left">
-                <TextBlock
-                Text="{Binding RBikeRow}"
+            <TextBlock
+                Text="Liste des pièces"
                 Foreground="White"
                 FontSize="24"></TextBlock>
-            </Border>
-            <StackPanel Orientation="Horizontal">
-                <Border Width="521"
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <Border Width="521"
                     Height="600"
                     Margin="30,0,0,0"
                     CornerRadius="10">
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
 
-                        <DataGrid x:Name="BikesGrid"
+                    <DataGrid x:Name="BikesGrid"
                               IsReadOnly= "True"
                               ItemsSource="{Binding Parts}"
                               Background="Transparent"
                               BorderThickness="0"
                               SelectedItem="{Binding PartRow}">
-                        </DataGrid>
-                    </ScrollViewer>
-                </Border>
-                <Border Width="280"
+                    </DataGrid>
+                </ScrollViewer>
+            </Border>
+            <Border Width="280"
                     Height="510"
                     Margin="30,-90,0,0"
                     CornerRadius="10"
                     Background="white">
-                    <StackPanel>
-                        <Border Width="250"
+                <StackPanel>
+                    <Border Width="250"
                             Height="30"
                             CornerRadius="10"
                             Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             x:Name="TBName"
                             Text="{Binding TLabel}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TPrice}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TDateS}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TDateE}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TDelay}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TStock}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <TextBox
+                        <TextBox
                             Text="{Binding TType}"
                             BorderThickness="0"
                             Background="#B5E8E0"
                             Padding="1,2,2,1"/>
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <Button Style="{StaticResource GlobalButtonTheme}"
+                        <Button Style="{StaticResource GlobalButtonTheme}"
                                 Content="Ajouter"
                                 Command="{Binding PartAdd}"
                                 >
 
-                            </Button>
+                        </Button>
 
-                        </Border>
-                        <Border Width="250"
+                    </Border>
+                    <Border Width="250"
                         Height="30"
                         CornerRadius="10"
                         Margin="1,20,2,1">
-                            <Button Style="{StaticResource GlobalButtonTheme}"
+                        <Button Style="{StaticResource GlobalButtonTheme}"
                                 Content="Modifier la sélection"
                                 Command="{Binding PartUpdate}"
                                 >
 
-                            </Button>
+                        </Button>
 
-                        </Border>
-                    </StackPanel>
+                    </Border>
+                </StackPanel>
 
-                </Border>
-            </StackPanel>
-
+            </Border>
         </StackPanel>
-    </Border>
-</Window>
+
+
+    </StackPanel>
+</UserControl>

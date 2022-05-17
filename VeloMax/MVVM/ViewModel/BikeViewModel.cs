@@ -136,9 +136,7 @@ namespace VeloMax.MVVM.ViewModel
                 BikePartWindow BP = new BikePartWindow();
                 BP.DataContext = new BikePartsViewModel();
                 ((BikePartsViewModel)BP.DataContext).RBikeRow = BikeRow;
-                Console.WriteLine(((BikePartsViewModel)BP.DataContext).RBikeRow);
                 BP.Show();
-                Console.WriteLine(BP.DataContext.ToString());
                 Console.WriteLine(tStock);
             });
 
@@ -274,6 +272,7 @@ namespace VeloMax.MVVM.ViewModel
             foreach (var item in bikes_data)
             {
                 bike = new Bike(item);
+                Console.WriteLine(bike);
                 Bikes.Add(bike);
             }
 
