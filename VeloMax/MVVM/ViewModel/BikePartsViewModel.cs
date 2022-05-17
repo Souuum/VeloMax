@@ -21,13 +21,20 @@ namespace VeloMax.MVVM.ViewModel
         private string tDateS;
         private string tDateE;
         private string tStock;
-
+        private BindableCollection<Part> parts;
         private string tLabel;
         private string tDelay;
 
         public string PartRow { get; set; }
         private List<List<string>> parts_data;
-        public BindableCollection<Part> Parts { get; set; }
+        public BindableCollection<Part> Parts
+        { 
+            get => parts; 
+            set
+            {
+                parts = value;
+                OnPropertyChanged();
+            } }
         public DataBase Db { get; set; }
 
 
@@ -66,6 +73,7 @@ namespace VeloMax.MVVM.ViewModel
             {
                 rBikeRow = value;
                 OnPropertyChanged(nameof(RBikeRow));
+                
             }
         }
 

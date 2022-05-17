@@ -57,7 +57,7 @@
                 Command="{Binding PartDelete}"
                                 Content="Supprimer la ligne"
                                 Width="154" Height="30"
-                Margin="460,0,0,-150"
+                Margin="240,0,0,-150"
                                 >
 
             </Button>
@@ -79,7 +79,7 @@
 
                         <DataGrid x:Name="BikesGrid"
                               IsReadOnly= "True"
-                              ItemsSource="{Binding Parts}"
+                              ItemsSource="{Binding Parts, UpdateSourceTrigger=PropertyChanged}"
                               Background="Transparent"
                               BorderThickness="0"
                               SelectedItem="{Binding PartRow}">
