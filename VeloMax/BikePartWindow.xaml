@@ -61,15 +61,29 @@
                                 >
 
             </Button>
-
-            <Border Height="110"
-                Width="600"
+            <StackPanel
+                Orientation="Horizontal">
+                <Border Height="110"
+                Width="242"
                 HorizontalAlignment="Left">
-                <TextBlock
-                Text="{Binding RBikeRow}"
+
+                    <TextBlock
+                Text="Pièces du vélo numéro"
                 Foreground="White"
                 FontSize="24"></TextBlock>
-            </Border>
+                </Border>
+
+                <Border Height="110"
+                Width="600"
+                HorizontalAlignment="Left">
+
+                    <TextBlock
+                Text="{Binding RBikeName}"
+                Foreground="White"
+                FontSize="24"></TextBlock>
+                </Border>
+            </StackPanel>
+
             <StackPanel Orientation="Horizontal">
                 <Border Width="521"
                     Height="600"
