@@ -19,6 +19,8 @@ namespace VeloMax.Core
         
         public string Country { get; set; }
 
+        public string Date { get; set; }
+
         public Order()
         {
 
@@ -28,12 +30,13 @@ namespace VeloMax.Core
         { 
             Id = Convert.ToInt32(list[0]);
             Customer_id = Convert.ToInt32(list[1]);
-            Street_number = Convert.ToInt32(list[2]);
-            Street = list[3];
-            City = list[4];
-            Postal_code = list[5];
-            State = list[6];
-            Country = list[7];
+            Date = list[2].Split()[0];
+            Street_number = Convert.ToInt32(list[3]);
+            Street = list[4];
+            City = list[5];
+            Postal_code = list[6];
+            State = list[7];
+            Country = list[8];
         }
 
         public override string ToString()
