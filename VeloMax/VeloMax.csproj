@@ -60,7 +60,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4795F7CEF9732C0FA25FDE633F8FCA2E755D73E5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B0BFC746546F1D4EF06B9DFD129E1C642F59EDD3</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>VeloMax_TemporaryKey.pfx</ManifestKeyFile>

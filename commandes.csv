@@ -1,0 +1,25 @@
+location.street.number;location.street.name;location.city;location.state;location.country;location.postcode;order_id;customer_id;quantity;shipping_date
+9084;Avenue Joliot Curie;Versailles;Mayotte;France;49066;13;1;2;2021-05-01
+4627;Rue Baraban;Montpellier;Pyrénées-Orientales;France;49716;2;2;4;2021-05-02
+426;Rue Bony;Nantes;Orne;France;76476;8;3;5;2021-05-03
+5142;Rue de L'Abbé-Patureau;Montreuil;Somme;France;36420;4;4;6;2021-05-04
+8937;Esplanade du 9 Novembre 1989;Le Havre;Guyane;France;46859;5;5;2;2021-05-05
+3910;Place Paul-Duquaire;Grenoble;Yvelines;France;71216;6;6;1;2021-05-06
+3517;Avenue des Ternes;Vitry-sur-Seine;Pas-de-Calais;France;81260;20;7;1;2021-05-07
+5612;Rue Barrème;Créteil;Orne;France;90897;3;8;1;2021-05-08
+3462;Rue des Ecrivains;Saint-Étienne;Yvelines;France;48149;9;9;1;2021-05-09
+3566;Rue de L'Abbaye;Reims;Eure-et-Loir;France;98506;22;10;1;2021-05-10
+2019;Rue Abel;Aulnay-sous-Bois;Marne;France;17582;11;11;3;2021-05-11
+7280;Rue de L'Abbé-Gillet;Saint-Pierre;Yvelines;France;37337;12;12;5;2021-05-12
+7895;Place du 22 Novembre 1943;Amiens;Ain;France;35897;1;13;2;2021-05-13
+5651;Place du 8 Février 1962;Limoges;Moselle;France;10666;14;14;3;2021-05-14
+9506;Place de L'Abbé-Georges-Hénocque;Lyon;Allier;France;31029;15;15;2;2021-05-15
+2416;Montée Saint-Barthélémy;Dijon;Ardèche;France;13448;16;16;1;2021-05-16
+6515;Rue de la Baleine;Besançon;Puy-de-Dôme;France;49919;17;17;1;2021-05-17
+282;Place Paul-Duquaire;Nîmes;Hautes-Alpes;France;64287;18;18;1;2021-05-18
+3744;Rue Louis-Blanqui;Vitry-sur-Seine;Eure;France;43430;19;19;1;2021-05-19
+3849;Rue Dumenge;Grenoble;Bouches-du-Rhône;France;51404;7;20;5;2021-05-20
+3252;Rue de L'Abbé-Migne;Clermont-Ferrand;Haute-Marne;France;52096;21;21;5;2021-05-21
+4780;Rue de la Gare;Vitry-sur-Seine;Nièvre;France;22031;10;22;6;2021-05-22
+8685;Rue Dumenge;Tourcoing;Vosges;France;48103;23;23;20;2021-05-23
+3312;Rue Abel-Gance;Avignon;Loir-et-Cher;France;59150;24;24;12;2021-05-24

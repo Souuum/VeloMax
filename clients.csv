@@ -1,0 +1,51 @@
+name.first;name.last;location.street.number;location.street.name;location.city;location.state;location.country;location.postcode;email;phone;customer id ;est membre ;nom programme;nom d'entreprise
+Gauthier;Fabre;9084;Avenue Joliot Curie;Versailles;Mayotte;France;49066;gauthier.fabre@example.com;01-54-15-81-27;1;1;1;SpaceX
+Naël;Lucas;4627;Rue Baraban;Montpellier;Pyrénées-Orientales;France;49716;nael.lucas@example.com;01-26-17-45-47;2;1;1;SpaceX
+Giulia;Dumont;426;Rue Bony;Nantes;Orne;France;76476;giulia.dumont@example.com;03-91-86-18-43;3;1;1;SpaceX
+Ninon;Bertrand;5142;Rue de L'Abbé-Patureau;Montreuil;Somme;France;36420;ninon.bertrand@example.com;05-31-57-93-01;4;1;1;SpaceX
+Charline;Lemoine;8937;Esplanade du 9 Novembre 1989;Le Havre;Guyane;France;46859;charline.lemoine@example.com;02-49-35-54-45;5;1;1;SpaceX
+Nina;Morel;3910;Place Paul-Duquaire;Grenoble;Yvelines;France;71216;nina.morel@example.com;03-65-32-44-21;6;1;1;Riot Games
+Joshua;Lacroix;3517;Avenue des Ternes;Vitry-sur-Seine;Pas-de-Calais;France;81260;joshua.lacroix@example.com;02-57-13-63-72;7;1;1;SpaceX
+Angelina;Sanchez;5612;Rue Barrème;Créteil;Orne;France;90897;angelina.sanchez@example.com;05-50-93-16-16;8;1;1;SpaceX
+Lenny;Fleury;3462;Rue des Ecrivains;Saint-Étienne;Yvelines;France;48149;lenny.fleury@example.com;02-28-94-60-50;9;1;1;SpaceX
+Augustin;Roche;3566;Rue de L'Abbaye;Reims;Eure-et-Loir;France;98506;augustin.roche@example.com;02-58-08-33-35;10;1;1;SpaceX
+Tom;Fournier;2019;Rue Abel;Aulnay-sous-Bois;Marne;France;17582;tom.fournier@example.com;02-29-42-07-33;11;1;1;SpaceX
+Mélody;Martinez;7280;Rue de L'Abbé-Gillet;Saint-Pierre;Yvelines;France;37337;melody.martinez@example.com;05-60-27-63-15;12;1;1;SpaceX
+Marie;David;7895;Place du 22 Novembre 1943;Amiens;Ain;France;35897;marie.david@example.com;05-50-83-54-82;13;1;1;SpaceX
+Dorian;Duval;5651;Place du 8 Février 1962;Limoges;Moselle;France;10666;dorian.duval@example.com;05-38-84-71-02;14;1;1;Kellogs
+Maëline;Guerin;9506;Place de L'Abbé-Georges-Hénocque;Lyon;Allier;France;31029;maeline.guerin@example.com;02-08-03-14-60;15;1;1;Kellogs
+Bérénice;Brun;2416;Montée Saint-Barthélémy;Dijon;Ardèche;France;13448;berenice.brun@example.com;01-53-24-02-84;16;1;2;Kellogs
+Noe;Dubois;6515;Rue de la Baleine;Besançon;Puy-de-Dôme;France;49919;noe.dubois@example.com;04-29-89-30-56;17;0;2;Kellogs
+Sélène;Leclerc;282;Place Paul-Duquaire;Nîmes;Hautes-Alpes;France;64287;selene.leclerc@example.com;04-76-53-74-31;18;0;2;Kellogs
+Tony;Moreau;3744;Rue Louis-Blanqui;Vitry-sur-Seine;Eure;France;43430;tony.moreau@example.com;04-03-28-46-54;19;0;2;SpaceX
+Aubin;Rousseau;3849;Rue Dumenge;Grenoble;Bouches-du-Rhône;France;51404;aubin.rousseau@example.com;02-98-93-17-13;20;0;2;SpaceX
+Nolan;Perez;3252;Rue de L'Abbé-Migne;Clermont-Ferrand;Haute-Marne;France;52096;nolan.perez@example.com;05-03-89-23-01;21;0;2;SpaceX
+Sélène;David;4780;Rue de la Gare;Vitry-sur-Seine;Nièvre;France;22031;selene.david@example.com;03-05-75-72-27;22;0;2;SpaceX
+Sandra;Dumas;8685;Rue Dumenge;Tourcoing;Vosges;France;48103;sandra.dumas@example.com;03-23-18-44-93;23;0;2;SpaceX
+Norah;Carpentier;3312;Rue Abel-Gance;Avignon;Loir-et-Cher;France;59150;norah.carpentier@example.com;05-88-92-23-59;24;0;2;SpaceX
+Laly;Richard;2096;Rue Saint-Georges;Limoges;Cher;France;55198;laly.richard@example.com;02-51-11-16-54;25;0;2;SpaceX
+Lana;Andre;3047;Place de L'Abbé-Georges-Hénocque;Montpellier;Sarthe;France;34189;lana.andre@example.com;03-69-60-87-08;26;0;2;SpaceX
+Léon;Clement;891;Rue Bossuet;Bordeaux;Indre-et-Loire;France;69263;leon.clement@example.com;01-05-26-78-89;27;0;2;SpaceX
+Léonard;Renaud;5144;Rue de L'Abbé-Soulange-Bodin;Versailles;Oise;France;90593;leonard.renaud@example.com;01-67-47-30-98;28;1;2;SpaceX
+Livio;Caron;6101;Rue de L'Abbé-De-L'Épée;Grenoble;Lozère;France;70470;livio.caron@example.com;02-40-35-76-77;29;1;2;SpaceX
+Sarah;Riviere;8852;Rue Abel-Hovelacque;Fort-de-France;Corrèze;France;10290;sarah.riviere@example.com;03-62-42-08-39;30;1;2;SpaceX
+Léo;Gautier;9200;Rue Paul Bert;Toulouse;Lot-et-Garonne;France;64706;leo.gautier@example.com;05-49-36-63-15;31;1;3;Leroy-Merlin
+Thaïs;Vidal;7625;Rue Baraban;Aulnay-sous-Bois;Creuse;France;61900;thais.vidal@example.com;02-08-18-79-26;32;1;3;Leroy-Merlin
+Apolline;Legrand;1656;Rue Principale;Asnières-sur-Seine;Vienne;France;56098;apolline.legrand@example.com;04-48-28-08-40;33;1;3;Leroy-Merlin
+Chloé;Morel;9531;Rue de L'Abbé-Roger-Derry;Le Havre;Hérault;France;61262;chloe.morel@example.com;02-60-81-15-71;34;1;3;Leroy-Merlin
+Angèle;Pierre;8589;Place Paul-Duquaire;Brest;Cantal;France;82673;angele.pierre@example.com;01-43-03-41-16;35;1;4;Leroy-Merlin
+Pablo;Vincent;1850;Place de L'Europe;Amiens;Doubs;France;36018;pablo.vincent@example.com;01-75-46-21-43;36;1;4;Leroy-Merlin
+Enzo;Gaillard;5438;Place de L'Europe;Boulogne-Billancourt;Gers;France;40671;enzo.gaillard@example.com;05-47-98-20-88;37;1;4;Leroy-Merlin
+Anatole;Martin;7220;Rue du Moulin;Roubaix;Creuse;France;72523;anatole.martin@example.com;05-18-18-82-17;38;1;4;Leroy-Merlin
+Lya;Duval;791;Rue de la Fontaine;Lille;Yvelines;France;51447;lya.duval@example.com;05-01-07-03-55;39;1;4;Leroy-Merlin
+Lorenzo;Roger;9899;Place de L'Abbé-Franz-Stock;Le Havre;Loiret;France;32770;lorenzo.roger@example.com;04-05-86-71-91;40;1;4;Leroy-Merlin
+Maëly;Fontai;8442;Rue Victor-Hugo;Amiens;Bas-Rhin;France;19318;maely.fontai@example.com;02-96-35-14-89;41;1;3;Leroy-Merlin
+Alex;Morin;3815;Rue Courbet;Aix-En-Provence;Finistère;France;21200;alex.morin@example.com;05-59-90-44-25;42;1;3;Leroy-Merlin
+Valentine;Menard;7691;Quai Chauveau;Boulogne-Billancourt;Hautes-Alpes;France;64440;valentine.menard@example.com;01-29-58-72-06;43;1;3;Leroy-Merlin
+Melvin;Durand;562;Rue Chazière;Dunkerque;Hautes-Alpes;France;74849;melvin.durand@example.com;05-32-12-19-48;44;0;3;Leroy-Merlin
+Thomas;Lefebvre;5413;Rue du Bât-D'Argent;Clermont-Ferrand;Vendée;France;17601;thomas.lefebvre@example.com;03-55-93-41-61;45;0;3;Leroy-Merlin
+Coline;Berger;9230;Rue de L'Abbé-De-L'Épée;Créteil;Ille-et-Vilaine;France;76454;coline.berger@example.com;01-92-47-11-63;46;0;3;Leroy-Merlin
+Simon;Henry;6725;Avenue Debrousse;Besançon;Pyrénées-Atlantiques;France;36723;simon.henry@example.com;03-07-76-53-06;47;0;3;Leroy-Merlin
+Diane;Girard;8837;Rue Barrier;Asnières-sur-Seine;Rhône;France;70466;diane.girard@example.com;03-27-90-67-56;48;0;3;Leroy-Merlin
+Fabien;Dupuis;5769;Boulevard de la Duchère;Bordeaux;Puy-de-Dôme;France;24863;fabien.dupuis@example.com;02-50-99-40-23;49;0;3;Leroy-Merlin
+Tim;Martinez;1991;Avenue de l'Abbé-Roussel;Clermont-Ferrand;Alpes-Maritimes;France;45987;tim.martinez@example.com;03-32-67-89-28;50;0;3;Leroy-Merlin
