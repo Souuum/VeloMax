@@ -84,10 +84,20 @@ namespace VeloMax.MVVM.ViewModel
         public RelayCommand OrderDelete { get; set; }
 
         public RelayCommand OrderUpdate { get; set; }
+
+        public RelayCommand OrderOpen { get; set; }
         public OrderViewModel()
         {
             Db = new DataBase();
             InitData();
+
+            OrderOpen = new RelayCommand(o =>
+            {
+                Console.WriteLine("Opening");
+                OrderWindow OW = new OrderWindow();
+                OW.Show();
+                InitData();
+            });
 
             OrderViewRefresh = new RelayCommand(o =>
             {

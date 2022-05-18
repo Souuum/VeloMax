@@ -159,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OrderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Theme\DataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -192,6 +196,7 @@
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\OrderViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BPViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\OrderWindowModel.cs" />
     <Compile Include="MVVM\ViewModel\PartViewModel.cs" />
     <Compile Include="MVVM\ViewModel\SupplierViewModel.cs" />
     <Compile Include="MVVM\View\BikeView.xaml.cs">
@@ -214,6 +219,9 @@
     </Compile>
     <Compile Include="MVVM\View\SupplierView.xaml.cs">
       <DependentUpon>SupplierView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

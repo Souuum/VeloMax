@@ -23,6 +23,14 @@
 
         </RadioButton>
         <Button Style="{StaticResource GlobalButtonTheme}"
+                Name="Open"
+                Content="Voir les détails"
+                Width="154" Height="30"
+                Margin="460,0,0,-50"
+                Command="{Binding OrderOpen}">
+
+        </Button>
+        <Button Style="{StaticResource GlobalButtonTheme}"
                 Command="{Binding OrderDelete}"
                                 Content="Supprimer la ligne"
                                 Width="154" Height="30"
