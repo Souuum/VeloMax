@@ -15,9 +15,17 @@ namespace VeloMax.MVVM.ViewModel
         private string nb_customersdata;
         private string nb_companysdata;
         private string nb_orderdata;
+        private string averageOrder;
         private BindableCollection<HomeOrder> homeOrder;
         private BindableCollection<BestClient> bclients;
 
+
+        public string AverageOrder
+        {
+            get {return averageOrder;}
+            set { averageOrder = value;
+            OnPropertyChange()}
+        }
         public BindableCollection<BestClient> BestClients
         {
             get { return bclients; }
@@ -151,6 +159,12 @@ namespace VeloMax.MVVM.ViewModel
             Nb_orderdata = reader_orders.GetString(0) + " Commandes";
             Console.WriteLine(Nb_orderdata);
             reader_orders.Close();
+
+            MySqlCommand averagecmd = new MySqlCommand("SELECT AVG(o.quantity) FROM orders as o;",connection);
+            MySqlDataReader reader_average = averagecmd.ExecuteReader();
+            reader_average.Read();
+            AverageOrder = reader_average.GetString(0) + " Commandes en moyenne";
+            reader_average.Close();
 
             MySqlCommand bestclient = new MySqlCommand("SELECT c.customer_firstname, c.customer_name, SUM(o.quantity) FROM customers as c JOIN orders as o ON o.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY SUM(o.quantity) DESC LIMIT 10;",connection);
             MySqlDataReader read_bestclient = bestclient.ExecuteReader();

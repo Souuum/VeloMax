@@ -109,6 +109,15 @@
                    HorizontalAlignment="Left"
                    FontSize="20"
                    Margin="10,0,0,20"/>
+                   <Border Width="200"
+                    Height="40"
+                    Background="#C9CBFF">
+                    <TextBlock Text="{Binding AverageOrder}"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10,0,0,20"/>
+                    </Border>
                 </Border>
                 <Border Width="300"
                         Height="300"
