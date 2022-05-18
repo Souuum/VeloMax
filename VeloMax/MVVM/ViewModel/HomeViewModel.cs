@@ -20,7 +20,7 @@ namespace VeloMax.MVVM.ViewModel
 
         public BindableCollection<BestClient> BestClients
         {
-            get {return bclients};
+            get { return bclients; }
             set { bclients = value;
             OnPropertyChanged();}
         }
@@ -152,29 +152,32 @@ namespace VeloMax.MVVM.ViewModel
             Console.WriteLine(Nb_orderdata);
             reader_orders.Close();
 
-            MySqlCommand bestclient = new MysqlCommand("SELECT c.customer_firstname, c.customer_name, SUM(o.quantity) FROM customers as c JOIN orders as o ON o.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY SUM(o.quantity) DESC LIMIT 10;")
+            MySqlCommand bestclient = new MySqlCommand("SELECT c.customer_firstname, c.customer_name, SUM(o.quantity) FROM customers as c JOIN orders as o ON o.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY SUM(o.quantity) DESC LIMIT 10;",connection);
             MySqlDataReader read_bestclient = bestclient.ExecuteReader();
             int j = 0;
             List<List<string>> listbestclient = new List<List<string>>();
-            while(read_bestclient() && j<3)
+            
+            while(read_bestclient.Read() && j<3)
             {
                 List<string> bcrow = new List<string>();
-                for (int i = 0; i < read_bestClient; i++)
+                for (int i = 0; i < read_bestclient.FieldCount; i++)
                 {
                     {
-                        bcrow.Add(read_bestClient.GetString(i));
+                        bcrow.Add(read_bestclient.GetString(i));
                     }
                 }
                 j++;
             }
             BestClient bclient = new BestClient();
-            BestClient = new BindableCollection<BestClient>();
+            BestClients = new BindableCollection<BestClient>();
             foreach(var item in listbestclient)
             {
+                Console.WriteLine(item);
                 bclient = new BestClient(item);
                 BestClients.Add(bclient);
             }
 
+            read_bestclient.Close();
             MySqlCommand lastorder = new MySqlCommand("SELECT DISTINCT Orders.order_id,shipping_date,customer_name,shipping_city, Bikes.price,Parts.price FROM Orders, Customers, Bikes, Parts, Bike_Ordered, Parts_Ordered WHERE Orders.customer_id = Customers.customer_id AND Orders.order_id = Bike_Ordered.order_id AND Bikes.bike_id = Bike_Ordered.bike_id AND Orders.order_id = Parts_Ordered.order_id AND Parts_Ordered.parts_id = Parts.parts_id ORDER BY shipping_date DESC",connection);
             MySqlDataReader dataReader = lastorder.ExecuteReader();
             j = 0;
@@ -231,7 +234,7 @@ namespace VeloMax.MVVM.ViewModel
     }
 
     
-    Class BestClient : ObservableObject
+    class BestClient : ObservableObject
     {
         public string Fname {get; set;}
         public string Name {get; set;}

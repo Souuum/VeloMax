@@ -141,7 +141,7 @@
                                                    Padding="5"
                                                    FontSize="14"
                                                    Margin="10,5,0,0"/>
-                                    <TextBlock Text="{Binding FName}"
+                                    <TextBlock Text="{Binding Fname}"
                                                    Foreground="#161320"
                                                    Padding="5"
                                                    FontSize="14"
