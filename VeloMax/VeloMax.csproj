@@ -60,10 +60,10 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4795F7CEF9732C0FA25FDE633F8FCA2E755D73E5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>FF354BF00401CBDC6C4FB754ACD93E5987A7B10F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VeloMax_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VeloMax_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -246,6 +246,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="VeloMax_1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
