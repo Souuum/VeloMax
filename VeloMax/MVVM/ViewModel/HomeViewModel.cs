@@ -3,6 +3,8 @@ using VeloMax.Core;
 using MySql.Data.MySqlClient;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using Caliburn.Micro;
 
 namespace VeloMax.MVVM.ViewModel
 {
@@ -13,8 +15,16 @@ namespace VeloMax.MVVM.ViewModel
         private string nb_customersdata;
         private string nb_companysdata;
         private string nb_orderdata;
+        private BindableCollection<HomeOrder> homeOrder;
         public DataBase Db { get; set; }
 
+        public BindableCollection<HomeOrder> HomeOrders
+        {
+            get { return homeOrder; }
+            set { homeOrder = value;
+                OnPropertyChanged();
+            }
+        }
         public string Nb_partsdata
         {
             get => nb_partsdata; set
@@ -25,9 +35,9 @@ namespace VeloMax.MVVM.ViewModel
         }
         public string Nb_orderdata
         {
-            get => nb_partsdata; set
+            get => nb_orderdata; set
             {
-                nb_partsdata = value;
+                nb_orderdata = value;
                 OnPropertyChanged(nameof(Nb_orderdata));
             }
         }
@@ -133,7 +143,60 @@ namespace VeloMax.MVVM.ViewModel
             Console.WriteLine(Nb_orderdata);
             reader_orders.Close();
 
+            
+
+            MySqlCommand lastorder = new MySqlCommand("SELECT DISTINCT Orders.order_id,shipping_date,customer_name,shipping_city, Bikes.price,Parts.price FROM Orders, Customers, Bikes, Parts, Bike_Ordered, Parts_Ordered WHERE Orders.customer_id = Customers.customer_id AND Orders.order_id = Bike_Ordered.order_id AND Bikes.bike_id = Bike_Ordered.bike_id AND Orders.order_id = Parts_Ordered.order_id AND Parts_Ordered.parts_id = Parts.parts_id ORDER BY shipping_date DESC",connection);
+            MySqlDataReader dataReader = lastorder.ExecuteReader();
+            int j = 0;
+            List<List<string>> list = new List<List<string>>();
+            while (dataReader.Read() && j<3)
+            {
+
+                List<string> row = new List<string>();
+                for (int i = 0; i < dataReader.FieldCount; i++)
+                {
+                    {
+                        row.Add(dataReader.GetString(i));
+                    }
+                }
+                list.Add(row);
+                j++;
+            }
+             dataReader.Close();
+            HomeOrder order = new HomeOrder();
+            HomeOrders = new BindableCollection<HomeOrder>();
+            foreach (var item in list)
+            {
+                order = new HomeOrder(item);
+                HomeOrders.Add(order);
+            }
+
             connection.Close();
+
         }
+    }
+
+    class HomeOrder : ObservableObject
+    {
+        public string Id { get; set; }
+        public string Date { get; set; }
+        public string Name { get; set; }
+        public string City { get; set; }
+        public int Price { get; set; }
+
+        public HomeOrder()
+        {
+
+        }
+
+        public HomeOrder(List<string> list)
+        {
+            Id = list[0];
+            Date = list[1];
+            Name = list[2];
+            City = list[3];
+            Price = Convert.ToInt32(list[4]) + Convert.ToInt32(list[5]);
+        }
+
     }
 }
