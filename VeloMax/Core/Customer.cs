@@ -57,7 +57,7 @@ namespace VeloMax.Core
             Phone = list[11];
             Mail = list[12];
             Fidelity_program = Convert.ToInt32(list[13]);
-            Is_member = list[13].ToString();
+            Is_member = list[14].ToString();
         }
 
         public override string ToString()

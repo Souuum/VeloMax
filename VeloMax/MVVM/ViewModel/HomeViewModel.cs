@@ -16,6 +16,15 @@ namespace VeloMax.MVVM.ViewModel
         private string nb_companysdata;
         private string nb_orderdata;
         private BindableCollection<HomeOrder> homeOrder;
+        private BindableCollection<BestClient> bclients;
+
+        public BindableCollection<BestClient> BestClients
+        {
+            get {return bclients};
+            set { bclients = value;
+            OnPropertyChanged();}
+        }
+
         public DataBase Db { get; set; }
 
         public BindableCollection<HomeOrder> HomeOrders
@@ -143,11 +152,32 @@ namespace VeloMax.MVVM.ViewModel
             Console.WriteLine(Nb_orderdata);
             reader_orders.Close();
 
-            
+            MySqlCommand bestclient = new MysqlCommand("SELECT c.customer_firstname, c.customer_name, SUM(o.quantity) FROM customers as c JOIN orders as o ON o.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY SUM(o.quantity) DESC LIMIT 10;")
+            MySqlDataReader read_bestclient = bestclient.ExecuteReader();
+            int j = 0;
+            List<List<string>> listbestclient = new List<List<string>>();
+            while(read_bestclient() && j<3)
+            {
+                List<string> bcrow = new List<string>();
+                for (int i = 0; i < read_bestClient; i++)
+                {
+                    {
+                        bcrow.Add(read_bestClient.GetString(i));
+                    }
+                }
+                j++;
+            }
+            BestClient bclient = new BestClient();
+            BestClient = new BindableCollection<BestClient>();
+            foreach(var item in listbestclient)
+            {
+                bclient = new BestClient(item);
+                BestClients.Add(bclient);
+            }
 
             MySqlCommand lastorder = new MySqlCommand("SELECT DISTINCT Orders.order_id,shipping_date,customer_name,shipping_city, Bikes.price,Parts.price FROM Orders, Customers, Bikes, Parts, Bike_Ordered, Parts_Ordered WHERE Orders.customer_id = Customers.customer_id AND Orders.order_id = Bike_Ordered.order_id AND Bikes.bike_id = Bike_Ordered.bike_id AND Orders.order_id = Parts_Ordered.order_id AND Parts_Ordered.parts_id = Parts.parts_id ORDER BY shipping_date DESC",connection);
             MySqlDataReader dataReader = lastorder.ExecuteReader();
-            int j = 0;
+            j = 0;
             List<List<string>> list = new List<List<string>>();
             while (dataReader.Read() && j<3)
             {
@@ -198,5 +228,24 @@ namespace VeloMax.MVVM.ViewModel
             Price = Convert.ToInt32(list[4]) + Convert.ToInt32(list[5]);
         }
 
+    }
+
+    
+    Class BestClient : ObservableObject
+    {
+        public string Fname {get; set;}
+        public string Name {get; set;}
+        public string Quantity {get; set;}
+
+        public BestClient()
+        {
+
+        }
+        public BestClient(List<string> list)
+        {
+            Fname = list[0];
+            Name = list[1];
+            Quantity = list[2];
+        }
     }
 }
