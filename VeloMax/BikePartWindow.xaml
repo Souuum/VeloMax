@@ -74,7 +74,7 @@
                 </Border>
 
                 <Border Height="110"
-                Width="600"
+                Width="80"
                 HorizontalAlignment="Left">
 
                     <TextBlock
